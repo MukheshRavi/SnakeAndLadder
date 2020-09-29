@@ -8,7 +8,7 @@ namespace snake_and_ladders
         public int rollingDie()
         {
             Random r = new Random();
-            int dieNo = r.Next(7);
+            int dieNo = r.Next(1,7);
             return dieNo;
         }
         public void option()
@@ -17,8 +17,11 @@ namespace snake_and_ladders
             int dieNo = new Program().rollingDie();
             Random r = new Random();
             int option = r.Next(3);
+            int noOfTurns = 0;
             while(position<100)
-            {  switch (option)
+            {
+                noOfTurns++;
+                switch (option)
                 {
                     case 0:
                         position = INITIAL + position;
@@ -36,14 +39,21 @@ namespace snake_and_ladders
 
                 if (position < 0)
                     position = INITIAL;
+                if (position > 100)
+                    position = position - dieNo;
+
+              
             }
+
+           
 
         }
 
 
         static void Main(string[] args)
         {
-            
+            Program p = new Program();
+            p.option();
         }
     }
 }
