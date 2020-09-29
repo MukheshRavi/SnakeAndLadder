@@ -17,21 +17,25 @@ namespace snake_and_ladders
             int dieNo = new Program().rollingDie();
             Random r = new Random();
             int option = r.Next(3);
-            switch (option)
+            while(position<100)
+            {  switch (option)
                 {
-                case 0:
-                    position = INITIAL + position;
-                    break;
-                case 1:
-                    position = position + dieNo;
-                    break;
-                case 2:
-                    position = position - dieNo;
-                    break;
-                default:
-                    break;
-                       
+                    case 0:
+                        position = INITIAL + position;
+                        break;
+                    case 1:
+                        position = position + dieNo;
+                        break;
+                    case 2:
+                        position = position - dieNo;
 
+                        break;
+                    default:
+                        break;
+                }
+
+                if (position < 0)
+                    position = INITIAL;
             }
 
         }
