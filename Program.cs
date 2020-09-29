@@ -42,7 +42,7 @@ namespace snake_and_ladders
                 if (position > 100)
                     position = position - dieNo;
 
-              
+                Console.WriteLine("The player took" + noOfTurns + "  turns to reach position" + position);
             }
 
            
