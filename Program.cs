@@ -14,13 +14,15 @@ namespace snake_and_ladders
         public void option()
         {
             int position = 0;
-            int dieNo = new Program().rollingDie();
-            Random r = new Random();
-            int option = r.Next(3);
+            
             int noOfTurns = 0;
             while(position<100)
             {
                 noOfTurns++;
+                int dieNo = new Program().rollingDie();
+                Random r = new Random();
+                int option = r.Next(3);
+                
                 switch (option)
                 {
                     case 0:
